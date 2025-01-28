@@ -1,0 +1,174 @@
+local plr = "WirpollmsToo"
+local db = false
+local db2 = true
+local search = game.Workspace.Characters:FindFirstChild(plr)
+
+for i = 1, 3 do
+ local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["EventName"] = "Double Max Health",
+        ["Selected"] = {
+            [1] = plr
+        },
+        ["EventCategory"] = "Player"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+end
+
+local args = {
+    [1] = "GiveTool",
+    [2] = {
+        ["PlayerName"] = plr,
+        ["IgnoreLimitedReskins"] = true,
+        ["ToolName"] = "Cardboard"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "GiveTool",
+    [2] = {
+        ["PlayerName"] = plr,
+        ["IgnoreLimitedReskins"] = true,
+        ["ToolName"] = "Medkit"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["EventName"] = "Growth Spurt",
+        ["Selected"] = {
+            [1] = plr
+        },
+        ["EventCategory"] = "Player"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["EventName"] = "Speed Decrease",
+        ["Selected"] = {
+            [1] = "WirpollmsToo"
+        },
+        ["EventCategory"] = "Player"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+
+while wait(0.1) do
+  local y = search:FindFirstChild("Cardboard")
+  if y then
+    y.Handle.Touched:Connect(function(yes) -- Assuming yes is the touched part
+      local hm = yes.Parent.Name
+if hm ~= plr and db == false then
+db = true
+      
+local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["EventName"] = "Virus",
+        ["Selected"] = {
+            [1] = hm
+        },
+        ["EventCategory"] = "Player"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+wait(0.3)
+db = false
+end
+    end)
+  end
+end
+
+while wait(0.05) do
+  local y = game.Workspace.Characters:FindFirstChild(plr)
+  if y then
+for _, object in ipairs(y:GetChildren()) do
+    object.Touched:Connect(function(yes) -- Assuming yes is the touched part
+      local hm = yes.Parent.Name
+if hm ~= plr and db2 == false then
+db = true
+      
+local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["EventName"] = "Virus",
+        ["Selected"] = {
+            [1] = hm
+        },
+        ["EventCategory"] = "Player"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+wait(0.05)
+db2 = false
+end
+end
+    end)
+  end
+end
+
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local playerName = plr
+local triggerWord = "transform"
+
+local player = Players:FindFirstChild(playerName)
+if player then
+    player.Chatted:Connect(function(message)
+        if message:lower() == triggerWord:lower() then
+
+db2 = false
+
+local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["Amount"] = 11,
+        ["EventName"] = "Growth Spurt",
+        ["Selected"] = {
+            [1] = playerName
+        },
+        ["EventCategory"] = "Player"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+
+            -- Wrap InvokeServer in a pcall to handle errors
+            local success, err = pcall(function()
+                
+            end)
+
+            if not success then
+                warn("Failed to invoke server: " .. tostring(err))
+            else
+                print("Tornado event triggered successfully!")
+end
+            end
+        end
+    end)
+else
+    warn("Player '" .. playerName .. "' not found!")
+end
+
+
