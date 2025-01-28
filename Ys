@@ -1,0 +1,126 @@
+local plr = "WirpollmsToo"
+local db = false
+local search = game.Workspace.Characters:FindFirstChild(plr)
+
+for i = 1, 2 do
+ local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["EventName"] = "Double Max Health",
+        ["Selected"] = {
+            [1] = plr
+        },
+        ["EventCategory"] = "Player"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+end
+
+local args = {
+    [1] = "GiveTool",
+    [2] = {
+        ["PlayerName"] = plr,
+        ["IgnoreLimitedReskins"] = true,
+        ["ToolName"] = "Cardboard"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "GiveTool",
+    [2] = {
+        ["PlayerName"] = plr,
+        ["IgnoreLimitedReskins"] = true,
+        ["ToolName"] = "Medkit"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+
+while wait(0.1) do
+  local y = search:FindFirstChild("Cardboard")
+  if y then
+    y.Handle.Touched:Connect(function(yes) -- Assuming yes is the touched part
+      local hm = yes.Parent.Name
+if hm ~= plr and db == false then
+db = true
+      local args = {
+          [1] = "SpawnEvent",
+          [2] = {
+              ["EventReskin"] = "Default",
+              ["EventName"] = "Turn Old",
+              ["Selected"] = {
+                  [1] = hm
+              },
+              ["EventCategory"] = "Player"
+          }
+      }
+
+      game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["EventName"] = "Shrink",
+        ["Selected"] = {
+            [1] = hm
+        },
+        ["EventCategory"] = "Player"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["EventName"] = "Half Max Health",
+        ["Selected"] = {
+            [1] = hm
+        },
+        ["EventCategory"] = "Player"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+wait(1)
+db = false
+end
+    end)
+  end
+end
+
+
+local pla = plr
+local Players = game:GetService("Players")
+
+-- Listen for chat messages from the target player
+local player = game.Players:FindFirstChild(pla)
+
+if player then
+    player.Chatted:Connect(function(message)
+        if message:upper() == "tornado" then
+            local args = {
+    [1] = "SpawnEvent",
+    [2] = {
+        ["EventVariant"] = "Dust Devil",
+        ["EventName"] = "Tornado",
+        ["Selected"] = {
+            [1] = "Base"
+        },
+        ["EventCategory"] = "Arena"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Admin:InvokeServer(unpack(args))
+
+
+                    -- Call the Remote function
+                    
+           
+            end
+        end
+    end)
+
