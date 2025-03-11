@@ -137,12 +137,17 @@ end)
 
 local tab = DrRayLibrary.newTab("DROPDOWNS", "ImageIdHere")
 
+
 local playerNames = {}
-for _, player in pairs(game.Players:GetPlayers()) do
+for _, player in ipairs(game.Players:GetPlayers()) do
     table.insert(playerNames, player.Name)
 end
 
- 
-tab.newDropdown("Test", "Test", playerNames, function(selectedOption)
-    print(selectedOption)
+
+tab.newDropdown("Select a person to oof", "Select a player!", playerNames, function(selectedPlayer)
+    local args = {
+    [1] = workspace:FindFirstChild(selectedPlayer).Head
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
