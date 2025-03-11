@@ -138,10 +138,11 @@ end)
 local tab = DrRayLibrary.newTab("DROPDOWNS", "ImageIdHere")
 
 local playerNames = {}
-for _, player in pairs("Test", "Test", game.Players:GetPlayers()) do
+for _, player in pairs(game.Players:GetPlayers()) do
     table.insert(playerNames, player.Name)
 end
+
  
-tab.newDropdown(playerNames, function(plr)
-    print(plr)
+tab.newDropdown("Test", "Test", playerNames, function(selectedOption)
+    print(selectedOption)
 end)
