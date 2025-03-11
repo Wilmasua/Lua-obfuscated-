@@ -139,7 +139,7 @@ local args = {
 
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end
-enr
+end
 end
 end)
 
