@@ -127,6 +127,21 @@ end
 end
 end)
 
+tab.newButton("turn everyone bald ", "💀💀💀", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+local yes = v.Character
+for _, z in ipairs(yes:GetChildren()) do
+if z:IsA("Accessory") then
+local args = {
+    [1] = z
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+enr
+end
+end)
+
 tab.newButton("Delete police car", "theres a starrrrr mannnn", function()
 local args = {
     [1] = workspace:FindFirstChild("Police Car")
