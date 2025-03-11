@@ -89,6 +89,8 @@ game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end
 end)
 
+local tab = DrRayLibrary.newTab("TROLL", "ImageIdHere")
+
 tab.newButton("Delete everyone 's animation", "Everyone 's animation will be stuck to the animation they were currently playing", function()
 for _, v in ipairs(game.Players:GetPlayers()) do
 local args = {
@@ -97,4 +99,38 @@ local args = {
 
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end
+end)
+
+tab.newButton("Delete everyone 's shirt ", "SHE SAID SHE WAS 12", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+local yes = v.Character:FindFirstChild("Shirt")
+if yes then
+local args = {
+    [1] = yes:Destroy()
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end
+end)
+
+tab.newButton("Delete everyone 's pants ", "SHE SAID SHE WAS 12", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+local yes = v.Character:FindFirstChild("Pants")
+if yes then
+local args = {
+    [1] = yes:Destroy()
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end
+end)
+
+tab.newButton("Delete police car", "theres a starrrrr mannnn", function()
+local args = {
+    [1] = workspace:FindFirstChild("Police Car")
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
