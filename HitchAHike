@@ -136,3 +136,12 @@ game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
 
 local tab = DrRayLibrary.newTab("DROPDOWNS", "ImageIdHere")
+
+local playerNames = {}
+for _, player in pairs("Test", "Test", game.Players:GetPlayers()) do
+    table.insert(playerNames, player.Name)
+end
+ 
+tab.newDropdown(playerNames, function(plr)
+    print(plr)
+end)
