@@ -1,0 +1,80 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("HIKE A TRIP | made by noro with no love", 16073647407)
+
+local tab = DrRayLibrary.newTab("ABUSIVE", "ImageIdHere")
+
+tab.newButton("Glitch everyone 's character except you", "", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+if v ~= game.Players.LocalPlayer then
+local args = {
+    [1] = v.Character
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end
+end)
+
+tab.newButton("Glitch everyone 's character", "", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+
+local args = {
+    [1] = v.Character
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+
+end
+end)
+
+tab.newButton("KICK ALL FE ", "kicks other players not you", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+if v ~= game.Players.LocalPlayer then
+local args = {
+    [1] = v
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end
+end)
+
+tab.newButton("Delete the whole map", "", function()
+for _, v in ipairs(game.Workspace:GetChildren()) do
+if v ~= game.Players.LocalPlayer then
+local args = {
+    [1] = v
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end
+end)
+
+tab.newButton("Delete all enemies pernamently", "", function()
+local args = {
+    [1] = game.Workspace.WanderingEnemies
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end)
+
+tab.newButton("Decapitate everyone ", "", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+local args = {
+    [1] = v.Character.Head
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end)
+
+tab.newButton("Delete road", "", function()
+for _, v in ipairs(game.Workspace.Parts.Parts:GetChildren()) do
+local args = {
+    [1] = v
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end)
