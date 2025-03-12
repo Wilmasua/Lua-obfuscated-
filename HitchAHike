@@ -100,6 +100,33 @@ game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end
 end)
 
+tab.newButton("remove the pistol robot fight", "use it when he finsihes talking or it migjt erroor", function()
+local args = {
+    [1] = game.Workspace.Parts.Important.Halfway["Security Robot"]
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+
+local args = {
+    [1] = game.Workspace.Parts.Important.Halfway["FightMusic"]
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+
+local args = {
+    [1] = game.Workspace.Parts.Important.Halfway["HalfwayBarrier"]
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+
+local args = {
+    [1] = game.Workspace.Parts.Important.Halfway["HalfwayCarPrevention"]
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+
+end)
+
 local tab = DrRayLibrary.newTab("TROLL", "ImageIdHere")
 
 tab.newButton("Delete everyone 's animation", "Everyone 's animation will be stuck to the animation they were currently playing", function()
@@ -169,7 +196,7 @@ local args = {
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
 
-tab.newButton("Delete everyone 's current inventory items", "VRO NO ONE IS GONNA GET A RIDE 💀", function()
+tab.newButton("Delete everyone 's current inventory items (wont delete the item that they are holding)", "VRO NO ONE IS GONNA GET A RIDE 💀", function()
 for _, p in ipairs(game.Players:GetPlayers()) do 
 for _, y in ipairs(p.Backpack:GetChildren()) do
 local args = {
@@ -179,6 +206,40 @@ local args = {
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end
 end
+end)
+
+tab.newButton("Delete NPC dialogue for everyone", "If your teammates are not bots of the game imagine how confused they are", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+local yes = v.PlayerGui:FindFirstChild("NPCs")
+if yes then
+local args = {
+    [1] = yes
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end
+end)
+
+tab.newButton("Delete Day and Meter gui for everyone", "Imagine somoene goes to jail and someone asks for their meter", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+local yes = v.PlayerGui:FindFirstChild("Beginning")
+if yes then
+local args = {
+    [1] = yes
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end
+end)
+
+tab.newButton("Break everyone 's camera pernamently ", "you cant reverse this", function()
+local args = {
+    [1] = workspace.Camera
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
 
 local tab = DrRayLibrary.newTab("DROPDOWNS", "ImageIdHere")
