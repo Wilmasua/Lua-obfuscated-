@@ -208,41 +208,8 @@ end
 end
 end)
 
-tab.newButton("Delete NPC dialogue for everyone", "If your teammates are not bots of the game imagine how confused they are", function()
-for _, v in ipairs(game.Players:GetPlayers()) do
-local yes = v.PlayerGui:FindFirstChild("NPCs")
-if yes then
-local args = {
-    [1] = yes
-}
 
-game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
-end
-end
-end)
-
-tab.newButton("Delete Day and Meter gui for everyone", "Imagine somoene goes to jail and someone asks for their meter", function()
-for _, v in ipairs(game.Players:GetPlayers()) do
-local yes = v.PlayerGui:FindFirstChild("Beginning")
-if yes then
-local args = {
-    [1] = yes
-}
-
-game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
-end
-end
-end)
-
-tab.newButton("Break everyone 's camera pernamently ", "doesnt work btw", function()
-local args = {
-    [1] = workspace.Camera
-}
-
-game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
-end)
-
-tab.newButton("Delete every car that is for hitchhiking on the map", "", function()
+tab.newButton("Delete every car that is for hitchhiking on the map", "if you do this while someone is sitting on a car no cars will spawn anymore", function()
 for _, obj in ipairs(game.Workspace:GetChildren()) do
 if obj.Name == "RV" or obj.Name == "Truck" or obj.Name == "Van" or obj.Name == "Box Van" or obj.Name == "Police Car" then
 local args = {
