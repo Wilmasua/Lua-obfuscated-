@@ -288,7 +288,7 @@ end
 end)
 
 tab.newDropdown("Select a person to remove their bones", "select someone", playerNames, function(selectedPlayer)
-    local yes = selectedPlayer.Character:FindFirstChild("Humanoid")
+    local yes = game.Players:FindFirstChild(selectedPlayer).Character:FindFirstChild("Humanoid")
 if yes then
 local args = {
     [1] = yes
