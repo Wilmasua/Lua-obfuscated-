@@ -252,6 +252,8 @@ local args = {
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end
 end
+end)
+
 local tab = DrRayLibrary.newTab("DROPDOWNS", "ImageIdHere")
 
 
