@@ -209,7 +209,7 @@ end
 end)
 
 
-tab.newButton("Delete every car that is for hitchhiking on the map", "if you do this while someone is sitting on a car no cars will spawn anymore", function()
+tab.newButton("Delete every car that is for hitchhiking on the map", "if you do this while a car stops by no cars will spawn anymore", function()
 for _, obj in ipairs(game.Workspace:GetChildren()) do
 if obj.Name == "RV" or obj.Name == "Truck" or obj.Name == "Van" or obj.Name == "Box Van" or obj.Name == "Police Car" then
 local args = {
@@ -287,6 +287,18 @@ game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end
 end)
 
+tab.newDropdown("Select a person to remove their bones", "select someone", playerNames, function(selectedPlayer)
+    local yes = selectedPlayer.Character:FindFirstChild("Humanoid")
+if yes then
+local args = {
+    [1] = yes
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end)
+
+
 local tab = DrRayLibrary.newTab("OTHER", "ImageIdHere")
 
 tab.newButton("Pernamnelty stop car npcs spawning", "Works", function()
@@ -305,3 +317,15 @@ local args = {
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
 
+tab.newButton("Make everyone including you lose all bones (unreversable)", "Only do this if you want everyone to leave because no one can move also you can use this in dropdowns", function()
+for _, v in ipairs(game.Players:GetPlayers()) do
+local yes = v.Character:FindFirstChild("Humanoid")
+if yes then
+local args = {
+    [1] = yes
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end
+end)
