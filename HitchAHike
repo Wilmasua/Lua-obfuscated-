@@ -160,7 +160,7 @@ for _, player in ipairs(game.Players:GetPlayers()) do
 end
 
 
-tab.newDropdown("Select a person to oof", "Select a player!", playerNames, function(selectedPlayer)
+tab.newDropdown("Select a person to oof", "Select a player", playerNames, function(selectedPlayer)
     local args = {
     [1] = workspace:FindFirstChild(selectedPlayer).Head
 }
@@ -171,6 +171,14 @@ end)
 tab.newDropdown("Select a person to glitch", "cant be reversed", playerNames, function(selectedPlayer)
     local args = {
     [1] = workspace:FindFirstChild(selectedPlayer)
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end)
+
+tab.newDropdown("Select a person to kick", "select someone", playerNames, function(selectedPlayer)
+    local args = {
+    [1] = game.Players:FindFirstChild(selectedPlayer)
 }
 
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
