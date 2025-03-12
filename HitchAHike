@@ -322,34 +322,12 @@ end)
 
 local tab = DrRayLibrary.newTab("OTHER", "ImageIdHere")
 
-tab.newButton("Enable player collision for everyone", "test", function()
+tab.newButton("Bug car npcs", "test", function()
 local args = {
-    [1] = game.Workspace.DisablePlayerCollisions
+    [1] = game.ReplicatedStorage.NPCStuff
 }
 
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
 
-tab.newButton("Disable being damaged by being ran over a car for everyone", "test", function()
-local args = {
-    [1] = game.ReplicatedStorage.Events.DriveIntoPlayer
-}
 
-game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
-end)
-
-tab.newButton("Disable damage from being shot by cars", "test", function()
-local args = {
-    [1] = game.Workspace.Shooting
-}
-
-game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
-end)
-
-tab.newButton("Enable player collision for everyone", "test", function()
-local args = {
-    [1] = game.Workspace.DisablePlayerCollisions
-}
-
-game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
-end)
