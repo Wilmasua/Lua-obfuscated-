@@ -332,7 +332,7 @@ end)
 
 tab.newButton("Stop cop from going out the car", "test", function()
 local args = {
-    [1] = game.ReplicatedStorage.Events.CarPullOverEvents.Cop
+    [1] = game.ReplicatedStorage.Events.PullingOverEvents.Cop
 }
 
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
