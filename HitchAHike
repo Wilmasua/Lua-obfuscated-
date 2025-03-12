@@ -322,7 +322,7 @@ end)
 
 local tab = DrRayLibrary.newTab("OTHER", "ImageIdHere")
 
-tab.newButton("Bug car npcs", "test", function()
+tab.newButton("Pernamnelty stop car npcs spawning", "Works", function()
 local args = {
     [1] = game.ReplicatedStorage.NPCStuff
 }
@@ -330,4 +330,11 @@ local args = {
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
 
+tab.newButton("Stop cop from going out the car", "test", function()
+local args = {
+    [1] = game.ReplicatedStorage.Events.CarPullOverEvents.Cop
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end)
 
