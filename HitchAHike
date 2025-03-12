@@ -198,3 +198,11 @@ end
 end
 end
 end)
+
+tab.newDropdown("Select a person to remove their animation", "select someone", playerNames, function(selectedPlayer)
+    local args = {
+    [1] = game.Workspace:FindFirstChild(selectedPlayer).Animate
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end)
