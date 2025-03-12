@@ -155,8 +155,10 @@ local tab = DrRayLibrary.newTab("DROPDOWNS", "ImageIdHere")
 
 
 local playerNames = {}
+while task.wait(1) do
 for _, player in ipairs(game.Players:GetPlayers()) do
     table.insert(playerNames, player.Name)
+end
 end
 
 
