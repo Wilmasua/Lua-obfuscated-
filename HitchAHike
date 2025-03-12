@@ -155,11 +155,7 @@ local tab = DrRayLibrary.newTab("DROPDOWNS", "ImageIdHere")
 
 
 local playerNames = {}
-while task.wait(1) do
-for _, player in ipairs(game.Players:GetPlayers()) do
-    table.insert(playerNames, player.Name)
-end
-end
+
 
 
 tab.newDropdown("Select a person to oof", "Select a player", playerNames, function(selectedPlayer)
@@ -185,3 +181,10 @@ tab.newDropdown("Select a person to kick", "select someone", playerNames, functi
 
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
+
+
+while task.wait(1) do
+for _, player in ipairs(game.Players:GetPlayers()) do
+    table.insert(playerNames, player.Name)
+end
+end
