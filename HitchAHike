@@ -161,6 +161,26 @@ local args = {
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
 
+tab.newButton("Delete atmosphere lighting", "creepy", function()
+local args = {
+    [1] = game.Lighting.Atmosphere
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end)
+
+tab.newButton("Delete everyone 's current inventory items", "VRO NO ONE IS GONNA GET A RIDE 💀", function()
+for _, p in ipairs(game.Players:GetPlayers()) do 
+for _, y in ipairs(p.Backpack:GetChildren()) do
+local args = {
+    [1] = y
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
+end
+end)
+
 local tab = DrRayLibrary.newTab("DROPDOWNS", "ImageIdHere")
 
 
@@ -215,4 +235,14 @@ tab.newDropdown("Select a person to remove their animation", "select someone", p
 }
 
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end)
+
+tab.newDropdown("Select a person to remove their inventory items", "select someone", playerNames, function(selectedPlayer)
+for _, stuff in ipairs(game.Players:FindFirstChild(selectedPlayer).Backpack:GetChildren()) do
+local args = {
+    [1] = stuff
+}
+
+game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
+end
 end)
