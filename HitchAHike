@@ -143,7 +143,7 @@ end
 end
 end)
 
-tab.newButton("Delete police car", "theres a starrrrr mannnn", function()
+tab.newButton("Delete police car", "theres a starrrrr mannnn (press this button when someone is inside the police car being driven away and they cant move forever)", function()
 local args = {
     [1] = workspace:FindFirstChild("Police Car")
 }
@@ -184,7 +184,7 @@ tab.newDropdown("Select a person to kick", "select someone", playerNames, functi
 game:GetService("ReplicatedStorage").Events.MoveCar:FireServer(unpack(args))
 end)
 
-tab.newDropdown("Select a person to turn balf", "select someone", playerNames, function(selectedPlayer)
+tab.newDropdown("Select a person to turn bald", "select someone", playerNames, function(selectedPlayer)
 local yes = game.Workspace:FindFirstChild(selectedPlayer)
 if yes then
 for _, y in ipairs(yes:GetChildren()) do
